@@ -8,7 +8,7 @@ This application was made with a tutorial from twilio for multi-party video appl
 
 - Deploy to [Twilio Serverless](https://www.twilio.com/docs/runtime/functions-assets-api) in just a few minutes
 - IF USED FOR OPEN SOURCE AND NON-COMMERCIAL USE PLEASE MENTION PROGRESSIVE GLOBAL AND TWILIO
-- LINK TO TWILIO ---> [twilio.com](twilio.com)
+- LINK TO TWILIO ---> [twilio.com](https://twilio.com/)
 ![App Preview](https://user-images.githubusercontent.com/12685223/94631109-cfca1c80-0284-11eb-8b72-c97276cf34e4.png)
 
 ## Prerequisites
