@@ -1,9 +1,14 @@
+
+name: ReactTS CI
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
 on:
   push:
     branches: [ master ]
+
    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
