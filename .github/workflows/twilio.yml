@@ -26,12 +26,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install dependencies for the twilio function
         run: npm ci
-      - name export twilio environment variables
-        run: export TWILIO_ACCOUNT_SID='AC81a88d6f8e790b566e5623b4c2535d82' && export TWILIO_API_KEY='SK409915655d3486773e0bb9913a5c2368' && export TWILIO_API_SECRET='YMPR5U2fTTVeIpuNxbc8p1wYPbE8BnF5' && twilio api:core:available-phone-numbers:local:list --area-code="017" --country-code SA --account-sid=<subaccount SID>’
       - name: Install twilio cli and run deploy command
         env:
          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID}}
          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY}}
          TWILIO_API_SECRET: ${{secrets.TWILIO_API_SECRET}}
         # Install the Twilio CLI and the serverless plugin then deploy the function
-        run: npm install twilio-cli -g && twilio plugins:install @twilio-labs/plugin-serverless && twilio serverless:deploy --service-name=witty-chat --environment=dev --force -l debug
+        run: export TWILIO_ACCOUNT_SID='AC81a88d6f8e790b566e5623b4c2535d82' && export TWILIO_API_KEY='SK409915655d3486773e0bb9913a5c2368' && export TWILIO_API_SECRET='YMPR5U2fTTVeIpuNxbc8p1wYPbE8BnF5' && twilio api:core:available-phone-numbers:local:list --area-code="017" --country-code SA --account-sid=<subaccount SID>’ && npm install twilio-cli -g && twilio plugins:install @twilio-labs/plugin-serverless && twilio serverless:deploy --service-name=witty-chat --environment=dev --force -l debug
