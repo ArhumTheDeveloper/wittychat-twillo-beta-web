@@ -32,9 +32,4 @@ jobs:
          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY}}
          TWILIO_API_SECRET: ${{secrets.TWILIO_API_SECRET}}
         # Install the Twilio CLI and the serverless plugin then deploy the function by
-        run: npm install twilio-cli -g 
-        export ${{ secrets.TWILIO_ACCOUNT_SID}}
-        export ${{ secrets.TWILIO_API_KEY}}
-        export ${{secrets.TWILIO_API_SECRET}}
-        twilio plugins:install @twilio-labs/plugin-serverless 
-        twilio serverless:deploy --service-name=witty-chat --environment=dev
+        run: npm install twilio-cli -g && export ${{ secrets.TWILIO_ACCOUNT_SID}} && export ${{ secrets.TWILIO_API_KEY}} && export ${{secrets.TWILIO_API_SECRET}} && twilio plugins:install @twilio-labs/plugin-serverless && twilio serverless:deploy --service-name=witty-chat --environment=dev
